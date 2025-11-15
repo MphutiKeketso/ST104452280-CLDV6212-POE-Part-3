@@ -1,0 +1,82 @@
+﻿@model ABCRetailers.Models.Order
+
+@{
+    ViewData["Title"] = "Edit Order";
+}
+
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h3>Edit Order: @Model.OrderNumber</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit">
+                        @Html.AntiForgeryToken()
+
+                        <input type="hidden" asp-for="OrderId" />
+
+                        <input type="hidden" asp-for="UserId" />
+                        <input type="hidden" asp-for="OrderNumber" />
+                        <input type="hidden" asp-for="OrderDate" />
+                        <input type="hidden" asp-for="CustomerName" />
+                        <input type="hidden" asp-for="CustomerEmail" />
+                        <input type="hidden" asp-for="ShippingAddress" />
+                        <input type="hidden" asp-for="PhoneNumber" />
+                        <input type="hidden" asp-for="Subtotal" />
+                        <input type="hidden" asp-for="Tax" />
+                        <input type="hidden" asp-for="ShippingCost" />
+                        <input type="hidden" asp-for="TotalAmount" />
+
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Order Number</label>
+                                <input class="form-control" value="@Model.OrderNumber" disabled />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Order Date</label>
+                                <input class="form-control" value="@Model.OrderDate.ToString("g")" disabled />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Customer</label>
+                            <input class="form-control" value="@Model.CustomerName (@Model.CustomerEmail)" disabled />
+                        </div>
+
+                        <hr />
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Status" class="form-label"></label>
+                                <select asp-for="Status" class="form-select">
+                                    <option>Pending</option>
+                                    <option>Shipped</option>
+                                    <option>Delivered</option>
+                                    <option>Cancelled</option>
+                                </select>
+                                <span asp-validation-for="Status" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="TrackingNumber" class="form-label"></label>
+                                <input asp-for="TrackingNumber" class="form-control" placeholder="Enter tracking number" />
+                                <span asp-validation-for="TrackingNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mt-3">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Save Changes
+                            </button>
+                            <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

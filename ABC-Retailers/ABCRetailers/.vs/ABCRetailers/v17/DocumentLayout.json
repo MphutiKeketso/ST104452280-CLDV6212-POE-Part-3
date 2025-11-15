@@ -1,0 +1,136 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USER-PC\\Documents\\School\\CLDV\\B\\ST104452280-CLDV6212-POE-Part-3\\ABC-Retailers\\ABCRetailers\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1EF96DBA-9DF5-4BDD-A214-25F5BD9637A1}|ABCRetailers.csproj|c:\\users\\user-pc\\documents\\school\\cldv\\b\\st104452280-cldv6212-poe-part-3\\abc-retailers\\abcretailers\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1EF96DBA-9DF5-4BDD-A214-25F5BD9637A1}|ABCRetailers.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EF96DBA-9DF5-4BDD-A214-25F5BD9637A1}|ABCRetailers.csproj|c:\\users\\user-pc\\documents\\school\\cldv\\b\\st104452280-cldv6212-poe-part-3\\abc-retailers\\abcretailers\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1EF96DBA-9DF5-4BDD-A214-25F5BD9637A1}|ABCRetailers.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EF96DBA-9DF5-4BDD-A214-25F5BD9637A1}|ABCRetailers.csproj|c:\\users\\user-pc\\documents\\school\\cldv\\b\\st104452280-cldv6212-poe-part-3\\abc-retailers\\abcretailers\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1EF96DBA-9DF5-4BDD-A214-25F5BD9637A1}|ABCRetailers.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EF96DBA-9DF5-4BDD-A214-25F5BD9637A1}|ABCRetailers.csproj|c:\\users\\user-pc\\documents\\school\\cldv\\b\\st104452280-cldv6212-poe-part-3\\abc-retailers\\abcretailers\\views\\order\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1EF96DBA-9DF5-4BDD-A214-25F5BD9637A1}|ABCRetailers.csproj|solutionrelative:views\\order\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EF96DBA-9DF5-4BDD-A214-25F5BD9637A1}|ABCRetailers.csproj|c:\\users\\user-pc\\documents\\school\\cldv\\b\\st104452280-cldv6212-poe-part-3\\abc-retailers\\abcretailers\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EF96DBA-9DF5-4BDD-A214-25F5BD9637A1}|ABCRetailers.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EF96DBA-9DF5-4BDD-A214-25F5BD9637A1}|ABCRetailers.csproj|c:\\users\\user-pc\\documents\\school\\cldv\\b\\st104452280-cldv6212-poe-part-3\\abc-retailers\\abcretailers\\views\\account\\manage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1EF96DBA-9DF5-4BDD-A214-25F5BD9637A1}|ABCRetailers.csproj|solutionrelative:views\\account\\manage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EF96DBA-9DF5-4BDD-A214-25F5BD9637A1}|ABCRetailers.csproj|c:\\users\\user-pc\\documents\\school\\cldv\\b\\st104452280-cldv6212-poe-part-3\\abc-retailers\\abcretailers\\models\\manageprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EF96DBA-9DF5-4BDD-A214-25F5BD9637A1}|ABCRetailers.csproj|solutionrelative:models\\manageprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\USER-PC\\Documents\\School\\CLDV\\B\\ST104452280-CLDV6212-POE-Part-3\\ABC-Retailers\\ABCRetailers\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\USER-PC\\Documents\\School\\CLDV\\B\\ST104452280-CLDV6212-POE-Part-3\\ABC-Retailers\\ABCRetailers\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-15T15:29:15.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\USER-PC\\Documents\\School\\CLDV\\B\\ST104452280-CLDV6212-POE-Part-3\\ABC-Retailers\\ABCRetailers\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\USER-PC\\Documents\\School\\CLDV\\B\\ST104452280-CLDV6212-POE-Part-3\\ABC-Retailers\\ABCRetailers\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-15T15:29:09.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\USER-PC\\Documents\\School\\CLDV\\B\\ST104452280-CLDV6212-POE-Part-3\\ABC-Retailers\\ABCRetailers\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\USER-PC\\Documents\\School\\CLDV\\B\\ST104452280-CLDV6212-POE-Part-3\\ABC-Retailers\\ABCRetailers\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-15T15:27:54.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER-PC\\Documents\\School\\CLDV\\B\\ST104452280-CLDV6212-POE-Part-3\\ABC-Retailers\\ABCRetailers\\Views\\Order\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Order\\Details.cshtml",
+              "ToolTip": "C:\\Users\\USER-PC\\Documents\\School\\CLDV\\B\\ST104452280-CLDV6212-POE-Part-3\\ABC-Retailers\\ABCRetailers\\Views\\Order\\Details.cshtml",
+              "RelativeToolTip": "Views\\Order\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T13:52:04.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\USER-PC\\Documents\\School\\CLDV\\B\\ST104452280-CLDV6212-POE-Part-3\\ABC-Retailers\\ABCRetailers\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\USER-PC\\Documents\\School\\CLDV\\B\\ST104452280-CLDV6212-POE-Part-3\\ABC-Retailers\\ABCRetailers\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T13:42:21.57Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Manage.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER-PC\\Documents\\School\\CLDV\\B\\ST104452280-CLDV6212-POE-Part-3\\ABC-Retailers\\ABCRetailers\\Views\\Account\\Manage.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Manage.cshtml",
+              "ToolTip": "C:\\Users\\USER-PC\\Documents\\School\\CLDV\\B\\ST104452280-CLDV6212-POE-Part-3\\ABC-Retailers\\ABCRetailers\\Views\\Account\\Manage.cshtml",
+              "RelativeToolTip": "Views\\Account\\Manage.cshtml",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAAwGUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-15T13:40:52.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ManageProfileViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\USER-PC\\Documents\\School\\CLDV\\B\\ST104452280-CLDV6212-POE-Part-3\\ABC-Retailers\\ABCRetailers\\Models\\ManageProfileViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ManageProfileViewModel.cs",
+              "ToolTip": "C:\\Users\\USER-PC\\Documents\\School\\CLDV\\B\\ST104452280-CLDV6212-POE-Part-3\\ABC-Retailers\\ABCRetailers\\Models\\ManageProfileViewModel.cs",
+              "RelativeToolTip": "Models\\ManageProfileViewModel.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAQwCkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T13:40:11.815Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

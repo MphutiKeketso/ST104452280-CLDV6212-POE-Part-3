@@ -1,0 +1,123 @@
+﻿@model ABCRetailers.Models.CheckoutViewModel
+
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<div class="container my-4">
+    <div class="text-center mb-4">
+        <h2><i class="fas fa-credit-card"></i> Secure Checkout</h2>
+        <p class="text-muted">Please fill in your details to complete the purchase.</p>
+    </div>
+
+    <form asp-action="Checkout" method="post">
+        @Html.AntiForgeryToken()
+
+        <div class="row g-5">
+            <div class="col-md-5 col-lg-4 order-md-last">
+                <div class="card shadow-sm sticky-top" style="top: 20px;">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="d-flex justify-content-between align-items-center mb-0">
+                            <span>Your Cart</span>
+                            <span class="badge bg-light text-primary rounded-pill">@Model.Cart.TotalItems</span>
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            @foreach (var item in Model.Cart.Items)
+                            {
+                                <li class="list-group-item d-flex justify-content-between lh-sm">
+                                    <div>
+                                        <h6 class="my-0">@item.ProductName</h6>
+                                        <small class="text-muted">Quantity: @item.Quantity</small>
+                                    </div>
+                                    <span class="text-muted">@item.TotalPrice.ToString("C")</span>
+                                </li>
+                            }
+
+                            <li class="list-group-item d-flex justify-content-between bg-light">
+                                <span>Subtotal</span>
+                                <strong>@Model.Cart.Subtotal.ToString("C")</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Tax (15%)</span>
+                                <strong>@Model.Cart.Tax.ToString("C")</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Shipping</span>
+                                <strong>@Model.Cart.ShippingCost.ToString("C")</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between fs-5">
+                                <span class="text-success">Total (USD)</span>
+                                <strong class="text-success">@Model.Cart.Total.ToString("C")</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-7 col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="mb-3">Shipping Address</h4>
+
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label asp-for="CustomerName" class="form-label"></label>
+                                <input asp-for="CustomerName" class="form-control" placeholder="Full Name">
+                                <span asp-validation-for="CustomerName" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-12">
+                                <label asp-for="CustomerEmail" class="form-label"></label>
+                                <input asp-for="CustomerEmail" class="form-control" placeholder="you@example.com">
+                                <span asp-validation-for="CustomerEmail" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-12">
+                                <label asp-for="PhoneNumber" class="form-label"></label>
+                                <input asp-for="PhoneNumber" class="form-control" placeholder="Optional">
+                                <span asp-validation-for="PhoneNumber" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-12">
+                                <label asp-for="ShippingAddress" class="form-label"></label>
+                                <textarea asp-for="ShippingAddress" class="form-control" rows="3" placeholder="1234 Main St, City, Country"></textarea>
+                                <span asp-validation-for="ShippingAddress" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-12">
+                                <label asp-for="OrderNotes" class="form-label"></label>
+                                <textarea asp-for="OrderNotes" class="form-control" rows="2" placeholder="Special instructions for delivery (optional)"></textarea>
+                                <span asp-validation-for="OrderNotes" class_suppress_asp_validation="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <h4 class="mb-3">Payment</h4>
+                        <p class="text-muted">
+                            This is a demo store. No real payment will be processed.
+                            Click "Place Order" to simulate the purchase.
+                        </p>
+
+                        <hr class="my-4">
+
+                        <button class="w-100 btn btn-primary btn-lg" type="submit">
+                            <i class="fas fa-lock"></i> Place Order
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        // Include client-side validation scripts
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,105 @@
+﻿using ABCRetailers.Models;
+
+@{
+    ViewData["Title"] = "Order Details";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="fas fa-receipt"></i> Order Details</h2>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.OrderId" class="btn btn-primary">
+            <i class="fas fa-edit"></i> Edit
+        </a>
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="fas fa-list"></i> Back to List
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Order Information</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Order ID:</strong></p>
+                        <p class="text-muted">@Model.OrderId</p>
+
+                        <p><strong>Customer:</strong></p>
+                        <p class="text-muted">@Model.Username</p>
+
+                        <p><strong>Product:</strong></p>
+                        <p class="text-muted">@Model.ProductName</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Order Date:</strong></p>
+                        <p class="text-muted">@Model.OrderDate.ToString("MMMM dd, yyyy")</p>
+
+                        <p><strong>Quantity:</strong></p>
+                        <p class="text-muted">@Model.Quantity</p>
+
+                        <p><strong>Status:</strong></p>
+                        <p>
+                            @{
+                                string GetStatusBadgeClass(string status) => status?.ToLower() switch
+                                {
+                                    "submitted" => "primary",
+                                    "processing" => "info",
+                                    "completed" => "success",
+                                    "cancelled" => "danger",
+                                    _ => "secondary"
+                                };
+                            }
+                            <span class="badge bg-@(GetStatusBadgeClass(Model.Status)) fs-6">
+                                @Model.Status
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h6 class="card-title mb-0">Pricing Details</h6>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <span>Unit Price:</span>
+                    <span>@Model.UnitPrice.ToString("C")</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <span>Quantity:</span>
+                    <span>@Model.Quantity</span>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between">
+                    <strong>Total Price:</strong>
+                    <strong class="text-success">@Model.TotalPrice.ToString("C")</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-header">
+                <h6 class="card-title mb-0">System Information</h6>
+            </div>
+            <div class="card-body">
+                <p><strong>Created:</strong></p>
+                <p class="text-muted small">@Model.Timestamp?.ToString("MMM dd, yyyy HH:mm")</p>
+
+                <p><strong>Customer ID:</strong></p>
+                <p class="text-muted small">@Model.CustomerId</p>
+
+                <p><strong>Product ID:</strong></p>
+                <p class="text-muted small">@Model.ProductId</p>
+            </div>
+        </div>
+    </div>
+</div>
+

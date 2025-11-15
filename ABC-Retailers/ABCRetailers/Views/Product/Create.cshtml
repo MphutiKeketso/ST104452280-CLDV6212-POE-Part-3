@@ -1,0 +1,145 @@
+﻿@model ABCRetailers.Models.Product
+@{
+    ViewData["Title"] = "Create Product";
+}
+
+<h2><i class="fas fa-plus-square"></i> Add New Product</h2>
+
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ProductName" class="form-label"></label>
+                <input asp-for="ProductName" class="form-control" placeholder="Enter product name" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Description" class="form-label"></label>
+                <textarea asp-for="Description" class="form-control" rows="3" placeholder="Enter product description"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label asp-for="Price" class="form-label">Price</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input asp-for="Price" name="Price" class="form-control" type="text" placeholder="29.99" required />
+                        </div>
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                        <div class="form-text">Enter price in dollars (e.g., 29.99) - Required field</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label asp-for="StockAvailable" class="form-label"></label>
+                        <input asp-for="StockAvailable" class="form-control" type="number" min="0" placeholder="0" />
+                        <span asp-validation-for="StockAvailable" class="text-danger"></span>
+                        <div class="form-text">Enter quantity in stock</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="imageFile" class="form-label">Product Image</label>
+                <input type="file" name="imageFile" id="imageFile" class="form-control" accept="image/*" />
+                <div class="form-text">Upload an image for this product (optional) - JPG, PNG, GIF formats</div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Create Product
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fas fa-times"></i> Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h6 class="card-title mb-0"><i class="fas fa-info-circle"></i> Product Guidelines</h6>
+            </div>
+            <div class="card-body">
+                <h6>Required Fields:</h6>
+                <ul class="small">
+                    <li>Product Name</li>
+                    <li>Description</li>
+                    <li>Price (must be greater than $0.00)</li>
+                    <li>Stock Quantity</li>
+                </ul>
+
+                <h6 class="mt-3">Image Guidelines:</h6>
+                <ul class="small">
+                    <li>Recommended size: 800x600 pixels</li>
+                    <li>Supported formats: JPG, PNG, GIF</li>
+                    <li>Maximum file size: 5MB</li>
+                </ul>
+
+                <div class="alert alert-info mt-3">
+                    <small><i class="fas fa-lightbulb"></i> <strong>Tip:</strong> High-quality images increase customer engagement!</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        // Form submission validation with enhanced price checking
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const priceInput = document.getElementById('Price');
+            const priceValue = priceInput.value.trim();
+
+            console.log('Form submitted with price value:', priceValue);
+
+            // Check if price is empty
+            if (!priceValue) {
+                e.preventDefault();
+                alert('Please enter a price for the product');
+                priceInput.focus();
+                return false;
+            }
+
+            // Try to parse the price
+            const price = parseFloat(priceValue);
+            if (isNaN(price) || price <= 0) {
+                e.preventDefault();
+                alert('Please enter a valid price greater than $0.00');
+                priceInput.focus();
+                return false;
+            }
+
+            console.log('Price validation passed:', price);
+        });
+
+        // Real-time price validation
+        document.getElementById('Price').addEventListener('input', function(e) {
+            const value = e.target.value.trim();
+            const errorSpan = document.querySelector('[data-valmsg-for="Price"]');
+
+            if (value) {
+                const price = parseFloat(value);
+                if (isNaN(price) || price <= 0) {
+                    if (errorSpan) errorSpan.textContent = 'Please enter a valid price greater than $0.00';
+                    e.target.style.borderColor = '#dc3545';
+                } else {
+                    if (errorSpan) errorSpan.textContent = '';
+                    e.target.style.borderColor = '#28a745';
+                }
+            } else {
+                if (errorSpan) errorSpan.textContent = 'Price is required';
+                e.target.style.borderColor = '#dc3545';
+            }
+        });
+    </script>
+}

@@ -1,0 +1,102 @@
+﻿@model ABCRetailers.Models.ManageProfileViewModel
+
+@{
+    ViewData["Title"] = "My Profile";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <h2 class="text-center mb-4">@ViewData["Title"]</h2>
+
+                @if (TempData["Success"] != null)
+                {
+                    <div class="alert alert-success" role="alert">
+                        @TempData["Success"]
+                    </div>
+                }
+
+                <form asp-action="Manage" method="post">
+                    @Html.AntiForgeryToken()
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                    <h5 class="text-muted mt-4 mb-3">Account Details</h5>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-floating mb-3">
+                                <input asp-for="Email" class="form-control" placeholder="Email" readonly />
+                                <label asp-for="Email"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating mb-3">
+                                <input asp-for="Username" class="form-control" placeholder="Username" />
+                                <label asp-for="Username"></label>
+                                <span asp-validation-for="Username" class="text-danger small"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="text-muted mt-4 mb-3">Personal Information</h5>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-floating mb-3">
+                                <input asp-for="FirstName" class="form-control" placeholder="First Name" />
+                                <label asp-for="FirstName"></label>
+                                <span asp-validation-for="FirstName" class="text-danger small"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating mb-3">
+                                <input asp-for="LastName" class="form-control" placeholder="Last Name" />
+                                <label asp-for="LastName"></label>
+                                <span asp-validation-for="LastName" class="text-danger small"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="PhoneNumber" class="form-control" placeholder="Phone Number" />
+                        <label asp-for="PhoneNumber"></label>
+                        <span asp-validation-for="PhoneNumber" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Address" class="form-control" placeholder="Address" />
+                        <label asp-for="Address"></label>
+                        <span asp-validation-for="Address" class="text-danger small"></span>
+                    </div>
+
+                    <div classs="d-grid mt-4">
+                        <button class="btn btn-primary btn-lg" type="submit">
+                            <i class="fas fa-save"></i> Save Changes
+                        </button>
+                    </div>
+
+                    <hr />
+
+                    <h5 class="text-muted mt-4 mb-3">Account History</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label asp-for="DateRegistered" class="form-label"></label>
+                            <input asp-for="DateRegistered" class="form-control" readonly />
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="LastLogin" class="form-label"></label>
+                            <input asp-for="LastLogin" class="form-control" readonly />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
